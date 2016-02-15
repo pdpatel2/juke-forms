@@ -1,0 +1,15 @@
+<div ng-controller="PlaylistCtrl">
+	<form name='newPlaylistForm'novalidate>
+	  <h3>New Playlist</h3>
+	  <div class="col-lg-10">
+	  	<label for="title">Title</label>
+	  	<input class="form-control" name="newPlaylistInput"id="title" ng-model="NewPlaylist" ng-maxlength='16' required>
+
+	  	<div class="alert alert-warning" ng-show="newPlaylistForm.newPlaylistInput.$error.maxlength">Playlist name is too long</div>
+
+	  	<div class="alert alert-warning" ng-show="newPlaylistForm.newPlaylistInput.$dirty && newPlaylistForm.newPlaylistInput.$invalid && !newPlaylistForm.newPlaylistInput.$error.maxlength">Please enter playlist name</div>
+
+	  	<button type="submit" class="btn btn-primary" ng-click='createPlaylist(NewPlaylist)' ng-disabled="newPlaylistForm.$invalid">Create Playlist</button>
+	  </div>
+	</form>
+</div>
