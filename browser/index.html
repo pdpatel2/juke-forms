@@ -40,34 +40,17 @@
             </h4>
           </section>
           <hr>
-          <section>
+          <section ng-controller="PlaylistCtrl">
             <h4 class="text-muted">PLAYLISTS</h4>
-            <p class="playlist-item" ng-repeat="playlist in allPlaylists">
-                <a>{{playlist.name}}</a>
+            <p class="playlist-item" >
+
+              <p class="playlist-item" ng-repeat="playlist in allPlaylists">
+                  <a>{{playlist.name}}</a>
             </p>
             <p>
               <a class="btn btn-primary btn-block" ui-sref="addPlaylist"><span class="glyphicon glyphicon-plus"></span> PLAYLIST</a>
             </p>
           </section>
-
-<!--                   <input ng-model="typedLetters">
-<table class="table">
-    <thead>
-        <tr>
-            <th ng-repeat="letter in alphabet">
-                <span ng-bind="letter"></span>
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td ng-repeat="letter in alphabet">
-                <span ng-bind="toFrequency(typedLetters)[letter]"></span>
-            </td>
-        </tr>
-    </tbody>
-</table> -->
-
         </sidebar>
       </div>
 

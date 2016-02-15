@@ -8,13 +8,15 @@ juke.config(function ($stateProvider) {
     controller: 'PlaylistCtrl'
   });
 
-  // $stateProvider.state('album', {
-  //   url: '/albums/:albumId',
-  //   templateUrl: '/js/album/templates/album.html',
-  //   controller: 'AlbumCtrl',
+  // $stateProvider.state('getPlaylists', {
+  //   url: '/',
+  //   // templateUrl: '',
+  //   template: '<a>{{playlist.name}}</a>',
+  //   controller: '',
   //   resolve: {
-  //     theAlbum: function (AlbumFactory, $stateParams) {
-  //       return AlbumFactory.fetchById($stateParams.albumId);
+
+  //     // theAlbum: function (AlbumFactory, $stateParams) {
+  //     //   return AlbumFactory.fetchById($stateParams.albumId);
   //     }
   //   }
   // });

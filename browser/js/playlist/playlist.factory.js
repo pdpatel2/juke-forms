@@ -7,6 +7,7 @@ juke.factory('PlaylistFactory', function ($http) {
   PlaylistFactory.fetchAll = function() {
   	return $http.get('/api/playlists')
   	.then(function(response) {
+  		console.log("fetching playlists",response.data)
   		return response.data
   	})
   }
