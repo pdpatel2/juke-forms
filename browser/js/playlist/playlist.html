@@ -1,5 +1,5 @@
 <div ng-controller="PlaylistCtrl">
-	<form name='newPlaylistForm'novalidate>
+	<form ng-model='newPlaylistForm' name='newPlaylistForm' novalidate ng-submit="reset()">
 	  <h3>New Playlist</h3>
 	  <div class="col-lg-10">
 	  	<label for="title">Title</label>

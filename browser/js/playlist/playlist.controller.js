@@ -9,4 +9,10 @@ juke.controller('PlaylistCtrl', function ($scope, $log, PlaylistFactory) {
     return PlaylistFactory.create(playlistString)
   }
 
+    $scope.reset = function() {
+    	// console.log("resetting")
+	    $scope.NewPlaylist = "";
+	    $scope.newPlaylistForm.$setPristine();
+  }
+
 });
