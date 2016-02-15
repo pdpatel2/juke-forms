@@ -45,7 +45,7 @@
             <p class="playlist-item" >
 
               <p class="playlist-item" ng-repeat="playlist in allPlaylists">
-                  <a>{{playlist.name}}</a>
+                  <a ui-sref="onePlaylist({playlistId: playlist._id})">{{playlist.name}}</a>
             </p>
             <p>
               <a class="btn btn-primary btn-block" ui-sref="addPlaylist"><span class="glyphicon glyphicon-plus"></span> PLAYLIST</a>

@@ -1,10 +1,9 @@
 'use strict';
 
-juke.controller('PlaylistCtrl', function ($scope, $log, PlaylistFactory) {
+juke.controller('PlaylistCtrl', function ($scope, $log, $state, PlaylistFactory) {
 
   PlaylistFactory.fetchAll()
   .then(function(response) {
-    // console.log(response);
     $scope.allPlaylists = response;
   });
 
@@ -13,13 +12,27 @@ juke.controller('PlaylistCtrl', function ($scope, $log, PlaylistFactory) {
   }
 
   $scope.createPlaylist = function(playlistString) {
-    return PlaylistFactory.create(playlistString)
+    PlaylistFactory.create(playlistString)
+    .then(function(response) {
+      $state.go('onePlaylist', {playlistId: response._id})
+      return response
+    })
   }
 
-    $scope.reset = function() {
-    	// console.log("resetting")
-	    $scope.NewPlaylist = "";
-	    $scope.newPlaylistForm.$setPristine();
+  $scope.reset = function() {
+    // console.log("resetting")
+    $scope.NewPlaylist = "";
+    $scope.newPlaylistForm.$setPristine();
   }
 
-});
+})
+.controller('OnePlaylistCtrl', function($scope, PlaylistFactory, thePlaylist, SongFactory) {
+
+  $scope.playlist = thePlaylist;
+
+  SongFactory.fetchAll()
+  .then(function(response) {
+    $scope.songList = response
+  });
+
+})

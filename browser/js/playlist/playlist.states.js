@@ -8,6 +8,17 @@ juke.config(function ($stateProvider) {
     controller: 'PlaylistCtrl'
   });
 
+  $stateProvider.state('onePlaylist', {
+    url: '/onePlaylist/:playlistId',
+    templateUrl: '/js/playlist/onePlaylist.html',
+    controller: 'OnePlaylistCtrl',
+    resolve: {
+      thePlaylist: function(PlaylistFactory, $stateParams) {
+        return PlaylistFactory.fetchById($stateParams.playlistId)
+      }
+    }
+  });
+
   // $stateProvider.state('getPlaylists', {
   //   url: '/',
   //   // templateUrl: '',
